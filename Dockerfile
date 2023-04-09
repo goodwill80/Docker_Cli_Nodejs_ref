@@ -21,7 +21,8 @@ COPY ./package.json ./
 # take a snapshot of the filesystem of the container, then store it as an image in cache
 # discard the temp container
 RUN npm install
-# Unless there are changes to the above in the rebuild
+# Unless there are changes to the above in the rebuild then docker will copy the files
+# Otherwise run from cache
 COPY ./ ./
 
 
